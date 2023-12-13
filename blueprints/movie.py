@@ -24,7 +24,6 @@ recommended_movies_dict = {
     'recommended_movies': set()
 }
 
-
 @bp.route("/")
 def index():
     results = []
