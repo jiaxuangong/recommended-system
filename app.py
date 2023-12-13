@@ -17,6 +17,7 @@ migrate = Migrate(app, db)
 app.register_blueprint(movie_bp)
 app.register_blueprint(auth_bp)
 
+
 #钩子函数：
 #   登录时在session里保存user信息
 @app.before_request

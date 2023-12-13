@@ -17,7 +17,6 @@ class MovieModel(db.Model):
     writers = db.Column(db.String(255))
     starts = db.Column(db.String(255))
 
-
 class UserModel(db.Model):
     __tablename__ = "movie_users"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
