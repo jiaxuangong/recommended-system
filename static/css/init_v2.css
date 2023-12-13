@@ -1,0 +1,73 @@
+body{
+    background-color: #f3f3f3;
+}
+
+/* 密码输入框样式 */
+#exampleInputPassword1 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+/*!* 密码强度条样式 *!*/
+/*.password-strength {*/
+/*    height: 10px;*/
+/*    background-color: #ddd;*/
+/*    border-radius: 5px;*/
+/*    margin-bottom: 5px;*/
+/*    position: relative;*/
+/*}*/
+/*.password-strength-bar {*/
+/*    height: 100%;*/
+/*    width: 0;*/
+/*    border-radius: 5px;*/
+/*    transition: width 0.3s;*/
+/*}*/
+/* 密码要求样式 */
+.password-requirements {
+    font-size: 14px;
+    color: #999;
+    height: 80px; /* 设置高度为80px */
+    padding: 10px; /* 添加内边距 */
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 5px;
+    margin-top: 10px; /* 增加上边距 */
+    overflow-y: auto; /* 如果内容溢出，显示滚动条 */
+}
+
+.password-requirements ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px; /* 增加上边距 */
+}
+
+.password-requirements li::before {
+    content: '• ';
+    color: #333;
+    font-weight: bold; /* 加粗列表项符号 */
+}
+.username-requirements {
+    font-size: 14px;
+    color: #999;
+    height: 80px; /* 设置高度为80px */
+    padding: 10px; /* 添加内边距 */
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 5px;
+    margin-top: 10px; /* 增加上边距 */
+    overflow-y: auto; /* 如果内容溢出，显示滚动条 */
+}
+
+.username-requirements ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px; /* 增加上边距 */
+}
+
+.username-requirements li::before {
+    content: '• ';
+    color: #333;
+    font-weight: bold; /* 加粗列表项符号 */
+}
+
+

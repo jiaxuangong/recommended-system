@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/history.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for movie in movie_infor %}
+            <div class="col-md-4 mb-4">
+                <div class="image-container">
+                    <!-- 显示电影图片 -->
+                    <a href="{{ movie.url }}" target="_blank">
+                        <div class="image-info" onmouseover="showInfo(this);" onmouseout="hideInfo(this);">
+                            <h2>{{ movie.name }}</h2>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <strong>ID:</strong> {{ movie.id }}
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Genre:</strong> {{ movie.genre }}
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Intro:</strong> {{ movie.intro }}
+                                </li>
+                            </ul>
+                        </div>
+                        <img src="{{ photos[loop.index0] }}" alt="{{ movie.name }}" class="img-fluid custom-image-size" onclick="sendMovieID('{{ movie.id }}')">
+                       <h3 class="movie-title">{{ movie.name }}</h3>
+                    </a>
+                </div>
+            </div>
+            <!-- 每行最多显示6张图片，创建新的一行 -->
+            {% if loop.index is divisibleby 6 %}
+                </div>
+                <div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+  <script>
+document.querySelectorAll('.image-container').forEach((container) => {
+    const infoWindow = container.querySelector('.image-info');
+
+    container.addEventListener('mouseenter', () => {
+        infoWindow.style.display = 'block';
+    });
+
+    container.addEventListener('mouseleave', () => {
+        infoWindow.style.display = 'none';
+    });
+});
+</script>
+{% endblock %}
